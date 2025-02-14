@@ -1,50 +1,86 @@
-# Welcome to your Expo app 👋
+TODO:
+- Create a docker container.
+- Find a home for embeddings - either pinecone or postgres db.
+- Create a ui for the python scripts that allows tagging.
+- Try with Deepseek.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Open Source AI Stack (Project Calcifer)
+This stack includes: Next.js, Python, Flowise, and uses an Ollama model for AI.
 
-## Get started
+-----
+## 📌 First Time Setup
+1. Install NodeJS >= 18.15.0: 
+See instructions here: https://nodejs.org/en/download
 
-1. Install dependencies
+2. Install Flowise:
+`npm install -g flowise`
 
-   ```bash
-   npm install
-   ```
+3. Install Ollama:
+Download from here: https://ollama.com/
 
-2. Start the app
+4. Install Python and pip
+`brew install python`  # macOS (Homebrew)  
+`python3 -m ensurepip --upgrade`
 
-   ```bash
-    npx expo start
-   ```
+-----
+## Frontend
+The frontend is built with Next.js to serve the content made by AI agents.
+1. Install dependencies: `npm install`
+2. Run the server `npm run dev` (available at http://localhost:3000)
+3. To generate a production build: `npm run build`
+4. Export static files: `npm run export`
 
-In the output, you'll find options to open the app in a
+-----
+## Backend
+### Python Scripts
+`python3 get_web_text.py <url>`:Generates a markdown file from a web url, then saves it into the document store.
+`python3 get_yt_text.py <url>`:Generates a set of markdown files from a web url that is a youtube playlist.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+-----
+## AI Tools
+### Running Flowise
+To start Flowise, run the following:
+- `npx flowise start`
+- then will be available at http://localhost:3000/
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Chatting with Llama Models
+To run and chat with a Llama model, use:
+`ollama run <model_name>`
 
-## Get a fresh project
+### Model Library
+Ollama offers a diverse library of models. Below is a list of models available, including their parameters, sizes, and commands to run them.
 
-When you're ready, run:
+| **Model**            | **Parameters** | **Size**   | **Command**                              |
+|----------------------|----------------|------------|------------------------------------------|
+| **Llama 3.3**        | 70B            | 43GB       | `ollama run llama3.3`                   |
+| **Llama 3.2**        | 3B             | 2.0GB      | `ollama run llama3.2`                   |
+| **Llama 3.2 (1B)**   | 1B             | 1.3GB      | `ollama run llama3.2:1b`                |
+| **Llama 3.2 Vision** | 11B            | 7.9GB      | `ollama run llama3.2-vision`            |
+| **Llama 3.2 Vision** | 90B            | 55GB       | `ollama run llama3.2-vision:90b`        |
+| **Llama 3.1**        | 8B             | 4.7GB      | `ollama run llama3.1`                   |
+| **Llama 3.1**        | 405B           | 231GB      | `ollama run llama3.1:405b`              |
+| **Phi 4**            | 14B            | 9.1GB      | `ollama run phi4`                       |
+| **Phi 3 Mini**       | 3.8B           | 2.3GB      | `ollama run phi3`                       |
+| **Gemma 2 (2B)**     | 2B             | 1.6GB      | `ollama run gemma2:2b`                  |
+| **Gemma 2**          | 9B             | 5.5GB      | `ollama run gemma2`                     |
+| **Gemma 2 (27B)**    | 27B            | 16GB       | `ollama run gemma2:27b`                 |
+| **Mistral**          | 7B             | 4.1GB      | `ollama run mistral`                    |
+| **Moondream 2**      | 1.4B           | 829MB      | `ollama run moondream`                  |
+| **Neural Chat**      | 7B             | 4.1GB      | `ollama run neural-chat`                |
+| **Starling**         | 7B             | 4.1GB      | `ollama run starling-lm`                |
+| **Code Llama**       | 7B             | 3.8GB      | `ollama run codellama`                  |
+| **Llama 2 Uncensored** | 7B          | 3.8GB      | `ollama run llama2-uncensored`          |
+| **LLaVA**            | 7B             | 4.5GB      | `ollama run llava`                      |
+| **Solar**            | 10.7B          | 6.1GB      | `ollama run solar`                      |
 
-```bash
-npm run reset-project
-```
+- For more information about the available models, visit the [Ollama Model Library](https://ollama.com/library).
+- Ensure that you have sufficient storage space to download the required model files.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Hardware Requirements
+To ensure smooth operation, your system should meet the following minimum requirements:
+- **7B Models**: At least 8 GB of RAM
+- **13B Models**: At least 16 GB of RAM
+- **33B Models**: At least 32 GB of RAM
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Learning Resources:
+- [Flowise Ollama Tutorial | How to Load Local LLM on Flowise](https://www.youtube.com/watch?v=85gZ7G-ze3c&list=PLHd6-S6zVDqrB5txJhy0VYVF-jdqewYX9&index=3)
