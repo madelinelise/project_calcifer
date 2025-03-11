@@ -1,4 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+/*  */
+/* * { */
+/* border: 2px dashed plum !important; */
+/* } */
+body {
+  font-family: "Source Serif 4", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+section {
+  margin-bottom: 230px;
+}
+
+a {
+  color: black;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-family: "Source Sans 3", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 900;
+  margin-top: 0;
+  font-family: "Source Sans 3", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  text-decoration: underline;
+  text-transform: capitalize;
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 900;
+  margin-top: 0;
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
 .layout-container {
   max-width: 1200px;
   margin: 0 auto;
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  padding: 0 50px;
+}
+
+.heading {
+  font-family: "Source Sans 3", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+  margin-bottom: 60px;
+
+  /* @TODO: Make mobile breakpoint */
+}
+
+.site-header__wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-nav {
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 42px;
+    margin: 0;
+    padding: 0;
+
+    a {
+      font-size: 20px;
+    }
+  }
+}
+
+.ad-box {
+  background-color: lightgray;
+  width: 300px;
+  height: 100px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* Recent Posts */
+.recent-posts {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+
+
+
+
+
+  span {
+    font-family: "Source Sans 3", serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  li {
+    margin-bottom: 16px;
+  }
+
 }

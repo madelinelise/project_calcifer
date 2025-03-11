@@ -1,7 +1,7 @@
 ---
 title: "React Basics"
 date: "2025-03-01"
-tags: ["react", "frontend"]
+tags: ["tech", react", "frontend"]
 ---
 React is a powerful JavaScript library for building user interfaces. In this post, we will cover the basics of React and how to get started with it.
 

@@ -2,7 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
+import RecentPostsByTag from '../components/RecentPostsByTag';
+import RecentPostsBySection from '../components/RecentPostsSection';
 
 // Fetch all posts data at build time
 export async function getStaticProps() {
@@ -39,16 +41,9 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
   return (
     <Layout>
-      <h2>All Blog Posts</h2>
-      <ul>
-        {posts.map(({ slug, frontmatter }) => (
-          <li key={slug.join('/')}>
-            <Link href={`/${slug.join('/')}`}>
-              {frontmatter.title} {/* No <a> tag needed */}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <RecentPostsBySection heading="Technology" tags={["tech", "javascript", "nextjs"]} posts={posts} />
+      <RecentPostsBySection heading="Finance" tags={["1", "2", "3"]} posts={posts} />
+      <RecentPostsBySection heading="Health" tags={["1", "2", "3"]} posts={posts} />
     </Layout>
   );
 }

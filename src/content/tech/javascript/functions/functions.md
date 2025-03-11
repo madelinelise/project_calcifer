@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with React"
 date: "2025-03-05"
-tags: ["react", "javascript", "frontend"]
+tags: ["tech", "react", "javascript", "frontend"]
 ---
 
 ## Introduction

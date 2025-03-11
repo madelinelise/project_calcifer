@@ -6,21 +6,27 @@ export default function Layout({ children }) {
     <div className="layout-container">
       {/* --- Header --- */}
       <header className='site-header'>
-        {/* --- Branding --- */}
-        <div className='site-branding'>
-          <h1>xyz.com</h1>
+        <div className='site-header__wrap'>
+          {/* --- Branding --- */}
+          <div className='site-branding'>
+            <Link href="/">
+              <h1 className='heading'>XYZ.com</h1>
+            </Link>
+          </div>
+          {/* --- /Branding --- */}
+          {/* --- Nav --- */}
+          <nav className='site-nav'>
+            <ul>
+              <li><Link href="/tech">Technology</Link></li>
+              <li><Link href="/health">Health</Link></li>
+              <li><Link href="/finance">Finance</Link></li>
+            </ul>
+          </nav>
         </div>
-        {/* --- /Branding --- */}
-        <nav>
-          <ul>
-            <li>
-              <Link href="/">Home</Link> {/* Remove <a> tag */}
-            </li>
-            <li>
-              <Link href="/tags">Tags</Link> {/* Remove <a> tag */}
-            </li>
-          </ul>
-        </nav>
+        <aside className='ad-box'>
+          AD
+        </aside>
+        {/* --- /Nav --- */}
       </header>
       {/* --- /Header --- */}
       <main>
@@ -28,7 +34,7 @@ export default function Layout({ children }) {
       </main>
 
       <footer>
-        <p>&copy; {new Date().getFullYear()} My Blog</p>
+        {/* <p>&copy; {new Date().getFullYear()} XYZ.com</p> */}
       </footer>
     </div>
   );
